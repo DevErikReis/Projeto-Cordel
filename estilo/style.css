@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+/*fontes, pegamos do google fonts, são duas fontes a Passion One e Sriracha. */
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&family=Sriracha&display=swap');
+
+:root {
+    --font1: Verdana, Geneva, Tahoma, sans-serif;
+    --font2: 'Passion One', sans-serif;
+    --font3:'Sriracha', sans-serif; 
+    
+    }
+
+* {
+    margin: 0px;
+    padding: 0px;
+    /* aqui você coloca o a configuração que você quer que seja padrão do seu código, exemplo, se você determinar que todas as fontes terá o tamanho de 20px e você for configura uma font de determinada tag como 2em, ela terá o dobro de 20px, ou seja será 40px.*/
+}
+/* aqui em baixo vão ser configurações que ambos vão ter em comum */
+html, body { 
+
+    min-height: 100%; /* o tamanho mínimo do meu corpo do html e conteúdo será de 100% da view port heigth, se fosse VW seria a largura. posso colocar 100vh se for altura e vw se for lagura */
+    background-color: aqua;
+    
+}
+
+ 
+
+header {
+    background-color: black;
+    color: white;
+    text-align: center; /* centralizamos nosso conteúdo que esta dentro do header. */
+    
+
+}
+header > h1 {
+    padding-top: 50px;
+    margin: 0px; /* coloquei isso pro h1 ficar colado no "Por Milton Duarte" */
+    /*text-transform: uppercase; /* essa tag faz com que o conteúdo todo que esta dentro fique com letra maiuscula */
+    
+    font-variant: small-caps; /* essa tag faz com que todas as iniciais das letras fiquem maiúsculas. Mas percebi também que muda a font, por que ela ficou diferente */
+    font-family: var(--font2);
+    font-size: 6vw; /* estava como font-size: 50px;, mas deixei com vw, vw=view port width ,ou seja, a nossa largura  view port, a font do h1 vai agir de acordo com o tamanho da tela, no celular vai ficar menor, em uma tela maior ela vai aumentar. */
+    
+  }
+
+  header > p {
+      padding-bottom: 50px;
+      font-size: 2vw; /* :)*/
+  }
+  header a {
+      color:white; /* deixei assim apara deixar o meu link do milton branco, mas apenas esse link */
+      text-decoration: none;
+      
+  }
+  header a:hover {
+      text-decoration: underline;
+      font-weight: bolder;
+      background-color: #030583;
+  }
+
+  section {
+      
+       padding-top: 10vh;
+       padding-bottom: 10vh;
+       /* aqui nesses paddings, eu posso colocar, porcentagem, pixel, mas o vh nos da um efeito que quando vc diminui e aumenta a tela, o fundo de cada uma das divs diminuem de acordo com o tamanho da tela.*/
+       line-height: 2em; /* aqui vou determinar o espaço entre uma linha e outra, entre a linha de cima e a linha de baixo.*/
+       padding-left: 30px;
+       font-family: var(--font3); 
+       font-size: 3vw;
+  }
+  section p {
+    padding-bottom: 2em;
+    
+  }
+  section.normal {
+      background-color: white;
+      color: black;
+ 
+  }
+  
+  section.imagem {
+      color: white;
+      background-color: black;
+      box-shadow: inset 1px 1px 20px 2px black;
+      background-attachment: fixed; /* isso aqui faz o efeito paralax, a tela rola para cima e baixo mas a imagem fica fixada, eu coloquei aqui nessa tag, mas poderia colocar na img01 e img02, porém aqui a configuração também configua as duas de baixo. */
+  }
+
+section.imagem > p {
+    display: inline-block;/* aqui foi transformado a nossa caixa em uma box inline level, por que nós colocamos uma cor de fundo e queremos que ela fique bem proximo do fim da quebra de linha, se eu deixar como box level esse fundo da tag p vai ir até o final da linha. */
+    background-color: #cebaba34;
+    /* aqui a ideia foi trazer um fundo para o nosso paragráfo, fazendo essa configuração deixamos apenas o nossa caixa P com fundo, com uma cor bem transparente, e então colocamos uma largura máxima de 500px.*/
+    padding-right: 10px; /* deu um padding de 10px para o final do fundo não ficar tão colado no fim das linhas. */
+    text-shadow: 2px 3px 3px black;
+    box-shadow: inset 0px 0px 20px 0px #00000026;
+}
+section#img01 {
+    background-image: url('../imagens/background001.jpg');
+    background-position: right center;
+    background-size: cover; /* esse tipo de background-size, existém outras possibilidades, faça o teste com cada uma delas, ela posiciona a foto de fundo de varias outras formas, faça o teste para ver qual você acha melhor.*/
+    background-repeat: no-repeat;
+}
+
+section#img01 >p {
+   background-color: #00000027;
+   box-shadow:inset -1px 2px 16px 0px black;
+   
+}
+
+section#img02 { 
+    background-image: url('../imagens/background002.jpg');
+    background-size: cover;
+}
+
+section#img02 p {
+    background-color: rgb(0 0 0 / 28%);
+    box-shadow:inset -1px 2px 16px 0px black;
+
+}
+
+footer {
+    background-color: black;
+    padding: 10px 00px 10px 00px;
+    color: white;
+    text-align: center;
+
+}
+footer a {
+    color:white;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+    background-color: blue;
+    font-weight: bolder;
+}
